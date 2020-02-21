@@ -8,7 +8,7 @@
   <script>
     $.get("http://127.0.0.1:3000/data")
       .then(all => {
-        $("#table").DataTable({ columns: all.columns, data: all.data, deferRender: true });
+        let table = $("#table").DataTable({ columns: all.columns, data: all.data, deferRender: true, colReorder: true, dom: "Bfrtip", buttons: ["colvis"] });
       });
   </script>
 </html>
