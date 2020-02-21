@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title>jQuery Datatables Testbed</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/cr-1.5.2/datatables.min.css"/>
+    <script src="https://cdn.datatables.net/v/dt/jqc-1.12.4/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/cr-1.5.2/datatables.min.js"></script>
+  </head>
+  <table id="table"></table>
+  <script>
+    $.get("http://127.0.0.1:3000/data")
+      .then(all => {
+        $("#table").DataTable({ columns: all.columns, data: all.data, deferRender: true });
+      });
+  </script>
+</html>
